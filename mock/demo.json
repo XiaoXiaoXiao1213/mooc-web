@@ -1,0 +1,125 @@
+
+//    课程demo
+[
+  {
+    "id" : "1192252213659774977",                           // 课程id
+    "teacher_id" : "1189389726308478977",                   // 课程讲师ID
+    "subject_id" : "1178214681139539969",                   // 课程专业ID
+    "subject_parent_id" : "1178214681118568449",            // 课程专业父级ID
+    "title" : "java基础课程：test",                        // 课程标题
+    "price" : 0.01,                        // 课程销售价格，设置为0则可免费观看
+    "lesson_num" : 2,                   // 总课时
+    "cover" : "https://guli-file-190513.oss-cn-beijing.aliyuncs.com/cover/default.gif",                        // 课程封面图片路径
+    "buy_count" : 4,                    // 销售数量
+    "view_count" : 387,                   // 浏览数量
+    "version" : 1,                      // 乐观锁
+    "status" : "Normal",                       // 课程状态 Draft未发布  Normal已发布
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2019-11-07 09:27:33",                   // 创建时间
+    "gmt_modified" : "2019-11-07 09:27:33"                  // 更新时间
+  },
+  {
+    "id" : "14",                           // 课程id
+    "teacher_id" : "1189389726308478977",                   // 课程讲师ID
+    "subject_id" : "1101348944971091969",                   // 课程专业ID
+    "subject_parent_id" : "1101348944920760321",            // 课程专业父级ID
+    "title" : "XHTML CSS2 JS整站制作教程课程学习",                        // 课程标题
+    "price" : 0,                        // 课程销售价格，设置为0则可免费观看
+    "lesson_num" : 3,                   // 总课时
+    "cover" : "https://guli-file-190513.oss-cn-beijing.aliyuncs.com/cover/default.gif",                        // 课程封面图片路径
+    "buy_count" : 3,                    // 销售数量
+    "view_count" : 44,                   // 浏览数量
+    "version" : 15,                      // 乐观锁
+    "status" : "Normal",                       // 课程状态 Draft未发布  Normal已发布
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2018-04-02 18:33:34",                   // 创建时间
+    "gmt_modified" : "2018-04-02 18:33:34"                  // 更新时间
+  },
+  {
+    "id" : "15",                           // 课程id
+    "teacher_id" : "1189389726308478977",                   // 课程讲师ID
+    "subject_id" : "1101348944971091969",                   // 课程专业ID
+    "subject_parent_id" : "1101348944920760321",            // 课程专业父级ID
+    "title" : "HTML5入门课程学习",                        // 课程标题
+    "price" : 0,                        // 课程销售价格，设置为0则可免费观看
+    "lesson_num" : 23,                   // 总课时
+    "cover" : "https://guli-file-190513.oss-cn-beijing.aliyuncs.com/cover/default.gif",                        // 课程封面图片路径
+    "buy_count" : 0,                    // 销售数量
+    "view_count" : 51,                   // 浏览数量
+    "version" : 17,                      // 乐观锁
+    "status" : "Normal",                       // 课程状态 Draft未发布  Normal已发布
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2018-04-02 18:34:32",                   // 创建时间
+    "gmt_modified" : "2018-04-02 18:34:32"                  // 更新时间
+  },
+  {
+    "id" : "18",                           // 课程id
+    "teacher_id" : "1189389726308478977",                   // 课程讲师ID
+    "subject_id" : "1101348944971091969",                   // 课程专业ID
+    "subject_parent_id" : "1101348944920760321",            // 课程专业父级ID
+    "title" : "Java精品课程",                        // 课程标题
+    "price" : 0.01,                        // 课程销售价格，设置为0则可免费观看
+    "lesson_num" : 20,                   // 总课时
+    "cover" : "https://guli-file-190513.oss-cn-beijing.aliyuncs.com/cover/default.gif",                        // 课程封面图片路径
+    "buy_count" : 151,                    // 销售数量
+    "view_count" : 737,                   // 浏览数量
+    "version" : 6,                      // 乐观锁
+    "status" : "Normal",                       // 课程状态 Draft未发布  Normal已发布
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2018-04-02 21:28:46",                   // 创建时间
+    "gmt_modified" : "2018-04-02 21:28:46"                  // 更新时间
+  }
+]
+
+
+//    讲师
+[
+  {
+    "id" : "1",                           // 讲师ID
+    "name" : "张三",                         // 讲师姓名
+    "intro" : "近年主持国家自然科学基金（6项）、江苏省重大科技成果转化项目（5项）、江苏省产学研前瞻性联合研究项目（3项）、省工业科技支撑、省高技术、省自然科学基金等省部级及其企业的主要科研项目40多个，多个项目在企业成功转化，产生了较好的经济、社会和环境效益。积极开展产学研科技合作，并与省内16家企业建立了江苏省研究生工作站，其中6家为江苏省优秀研究生工作站",                        // 讲师简介
+    "career" : "高级",                       // 讲师资历
+    "level" : 1,                        // 头衔 1高级讲师 2首席讲师
+    "avatar" : "https://guli-file-190513.oss-cn-beijing.aliyuncs.com/avatar/default.jpg",                       // 讲师头像
+    "sort" : 0,                         // 显示排序(默认是0，降序)
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2019-10-30 14:18:46",                   // 创建时间
+    "gmt_modified" : "2019-10-30 11:53:03"                  // 更新时间
+  },
+  {
+    "id" : "1189389726308478977",                           // 讲师ID
+    "name" : "晴天",                         // 讲师姓名
+    "intro" : "高级讲师简介",                        // 讲师简介
+    "career" : "高级讲师资历",                       // 讲师资历
+    "level" : 2,                        // 头衔 1高级讲师 2首席讲师
+    "avatar" : "https://online-teach-file.oss-cn-beijing.aliyuncs.com/teacher/2019/10/30/de47ee9b-7fec-43c5-8173-13c5f7f689b2.png",                       // 讲师头像
+    "sort" : 1,                         // 显示排序(默认是0，降序)
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2019-10-30 11:53:03",                   // 创建时间
+    "gmt_modified" : "2019-10-30 11:53:03"                  // 更新时间
+  },
+  {
+    "id" : "1189390295668469762",                           // 讲师ID
+    "name" : "李刚",                         // 讲师姓名
+    "intro" : "高级讲师简介",                        // 讲师简介
+    "career" : "高级讲师",                       // 讲师资历
+    "level" : 2,                        // 头衔 1高级讲师 2首席讲师
+    "avatar" : "https://online-teach-file.oss-cn-beijing.aliyuncs.com/teacher/2019/10/30/b8aa36a2-db50-4eca-a6e3-cc6e608355e0.png",                       // 讲师头像
+    "sort" : 2,                         // 排序(默认是0)
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2019-10-30 11:55:19",                   // 创建时间
+    "gmt_modified" : "2019-10-30 11:55:19"                  // 更新时间
+  },
+  {
+    "id" : "1189426437876985857",                           // 讲师ID
+    "name" : "王二",                         // 讲师姓名
+    "intro" : "高级讲师简介",                        // 讲师简介
+    "career" : "高级讲师",                       // 讲师资历
+    "level" : 1,                        // 头衔 1高级讲师 2首席讲师
+    "avatar" : "https://online-teach-file.oss-cn-beijing.aliyuncs.com/teacher/2019/11/08/e44a2e92-2421-4ea3-bb49-46f2ec96ef88.png",                       // 讲师头像
+    "sort" : 3,                         // 排序(默认是0)
+    "is_deleted" : 0,                   // 逻辑删除 1（true）已删除， 0（false）未删除
+    "gmt_create" : "2019-10-30 14:18:56",                   // 创建时间
+    "gmt_modified" : "2019-10-30 14:18:56"                  // 更新时间
+  }
+]
