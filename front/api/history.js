@@ -1,5 +1,5 @@
 import request from '../utils/request'
-export const STATIC_URL = "http://121.4.123.223:18080/api/1.0"
+export const STATIC_URL = ""
 
 export default {
   //获取浏览历史
