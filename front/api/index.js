@@ -1,6 +1,7 @@
 import request from '../utils/request'
-export const STATIC_URL = "http://121.4.123.223:18080/api/1.0"
+export const STATIC_URL = ""
 
+//export const STATIC_URL = "http://121.4.123.223:18080/api/1.0"
 export default {
   // 获取8门推荐课程
   // 获取8门推荐课程
