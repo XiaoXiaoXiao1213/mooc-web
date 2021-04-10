@@ -27,8 +27,6 @@ export const HTTP_REQUEST_METHOD = {
   PUTURL: "put",
 };
 
-export const TOKEN_KEY = "token"
+export const TOKEN_KEY = "Authorization"
 
-// export const STATIC_URL = "https://wx.couplefish.com/bswstatic"
-export const STATIC_URL = "http://127.0.0.1:8013/images/"
-export const STATIC_URL_VIDEO = "http://127.0.0.1:8013/video"
+export const STATIC_URL = "http://127.0.0.1:8088/"

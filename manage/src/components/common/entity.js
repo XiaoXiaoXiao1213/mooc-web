@@ -150,8 +150,7 @@ export const SystemParameter = new class SystemParameter {
   }
 
   get SERVICE_HOST_ADDR() {
-    // return `https://wx.couplefish.com/bswapi`
-    return `http://localhost:8013/api/`
+    return `http://localhost:18080/api/1.0`
   }
 
 }

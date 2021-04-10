@@ -1,19 +1,24 @@
-import request from '@/utils/request'
+import request from '../utils/request'
 
 export default {
   //获取浏览历史
-  getHistoryList(memberToken) {
+  getHistoryList(token) {
     return request({
-      url: `/getHistoryList?memberToken=${memberToken}`,
+      url: `/user/history/video`,
       method: 'get',
+      headers: {
+        "Authorization": token
+      }
     })
   },
   //添加浏览历史
-  addHistory(req) {
+  addHistory(id, token) {
     return request({
-      url: `/addHistory`,
-      method: 'post',
-      data: req
+      url: `/video/click/${id}`,
+      method: 'put',
+      headers: {
+        "Authorization":token
+      }
     })
   }
 }

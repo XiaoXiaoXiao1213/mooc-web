@@ -1,7 +1,7 @@
 (async function (model) {
 
     // const BaseUrl = "https://wx.couplefish.com/bswapi/";
-    const BaseUrl = "http://localhost:8013/api/";
+    const BaseUrl = "http://localhost:18080/api/1.0/";
 
     const Utils = {
         set Token(token) {
@@ -17,9 +17,9 @@
          * @param {*} headers 
          */
         POST(url, da = {}, headers = {}) {
-            if (!url.includes("http")) {
-                url = BaseUrl  + url
-            }
+            // if (!url.includes("http")) {
+            //     url = BaseUrl  + url
+            // }
             return new Promise((resolve, reject) => {
                 axios.post(url, da, { headers: Object.assign({ token: Utils.Token }, headers) }).then(({ data }) => {
                     if (data.code == 0) {
@@ -39,9 +39,9 @@
          * @param {*} headers 
          */
         GET(url, headers = {}) {
-            if (!url.includes("http")) {
-                url = BaseUrl+ url
-            }
+            // if (!url.includes("http")) {
+            //     url = BaseUrl+ url
+            // }
             return new Promise((resolve, reject) => {
                 axios.get(url, { headers: Object.assign({ token: Utils.Token }, headers) }).then(({ data }) => {
                     if (data.code == 0) {

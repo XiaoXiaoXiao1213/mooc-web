@@ -1,18 +1,29 @@
-import request from '@/utils/request'
+import request from '../utils/request'
+
 export default {
   //登录
   login(userInfo) {
     return request({
-      url: `/userLogin`,
+      url: `/user/login`,
       method: 'post',
-      data: userInfo
+      data: JSON.stringify(userInfo),
     })
   },
-  editUser(userInfo) {
+  register(userInfo) {
     return request({
-      url: `/editUser`,
+      url: `/user/register`,
       method: 'post',
-      data: userInfo
+      data: JSON.stringify(userInfo),
+
+    })
+  },
+  logout(token) {
+    return request({
+      url: `/user/logout`,
+      method: 'put',
+      headers: {
+        "Authorization": token
+      }
     })
   },
   //根据token获取用户信息
@@ -22,6 +33,6 @@ export default {
   //     method: 'get',
   //    // headers: {'token': cookie.get('guli_token')}
   //   })
-  //   //headers: {'token': cookie.get('guli_token')} 
+  //   //headers: {'token': cookie.get('guli_token')}
   // }
 }

@@ -16,7 +16,7 @@ export default {
     url: '/login',
     /**接口方法 */
     method: HTTP_REQUEST_METHOD.POST,
-    param: { username: "", password: "" }
+    param: { phone: "", password: "" }
   },
   modifyAdministratorPassword: {
     /**接口地址 */

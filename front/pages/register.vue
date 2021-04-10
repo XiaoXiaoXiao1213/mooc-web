@@ -9,16 +9,16 @@
     <div class="sign-up-container">
       <el-form ref="userForm" :model="params">
 
-        <el-form-item class="input-prepend restyle" prop="nickname" :rules="[{ required: true, message: '请输入你的昵称', trigger: 'blur' }]">
+        <el-form-item class="input-prepend restyle" prop="name" :rules="[{ required: true, message: '请输入你的昵称', trigger: 'blur' }]">
           <div>
-            <el-input type="text" placeholder="你的昵称" v-model="params.nickname"/>
+            <el-input type="text" placeholder="你的昵称" v-model="params.name"/>
             <i class="iconfont icon-user"/>
           </div>
         </el-form-item>
 
-        <el-form-item class="input-prepend restyle no-radius" prop="mobile" :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]">
+        <el-form-item class="input-prepend restyle no-radius" prop="phone" :rules="[{ required: true, message: '请输入手机号码', trigger: 'blur' },{validator: checkPhone, trigger: 'blur'}]">
           <div>
-            <el-input type="text" placeholder="手机号" v-model="params.mobile"/>
+            <el-input type="text" placeholder="手机号" v-model="params.phone"/>
             <i class="iconfont icon-phone"/>
           </div>
         </el-form-item>
@@ -41,15 +41,6 @@
           <a target="_blank" href="http://www.jianshu.com/p/2ov8x3">隐私政策</a> 。
         </p>
       </el-form>
-      <!-- 更多注册方式 -->
-      <div class="more-sign">
-        <h6>社交帐号直接注册</h6>
-        <ul>
-          <li><a id="weixin" class="weixin" target="_blank" href="http://huaan.free.idcfengye.com/api/ucenter/wx/login"><i
-            class="iconfont icon-weixin"/></a></li>
-          <li><a id="qq" class="qq" target="_blank" href="#"><i class="iconfont icon-qq"/></a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -65,10 +56,9 @@
     data() {
       return {
         params: {
-          mobile: '',
-          nickname: '',
+          phone: '',
+          name: '',
           password: '',
-          type: "register"
         }
       }
     },
@@ -76,7 +66,8 @@
       submitRegister() {
         this.$refs['userForm'].validate((valid) => {
           if (valid) {
-            loginApi.editUser(this.params).then(response => {
+            console.log("this.params",this.params)
+            loginApi.register(this.params).then(response => {
               let data = response.data
               if(data.code==-1){
                 this.$message.error(data.message);

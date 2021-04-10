@@ -10,14 +10,14 @@
       <el-form ref="userForm" :model="user">
         <el-form-item
           class="input-prepend restyle"
-          prop="mobile"
+          prop="phone"
           :rules="[
             { required: true, message: '请输入手机号码', trigger: 'blur' },
             { validator: checkPhone, trigger: 'blur' },
           ]"
         >
           <div>
-            <el-input type="text" placeholder="手机号" v-model="user.mobile" />
+            <el-input type="text" placeholder="手机号" v-model="user.phone" />
             <i class="iconfont icon-phone" />
           </div>
         </el-form-item>
@@ -46,22 +46,6 @@
           />
         </div>
       </el-form>
-      <!-- 更多登录方式 -->
-      <div class="more-sign">
-        <h6>社交帐号登录</h6>
-        <ul>
-          <li>
-            <a id="weixin" href="javaScript:void(0)">
-              <i class="iconfont icon-weixin" />
-            </a>
-          </li>
-          <li>
-            <a id="qq" href="javaScript:void(0)">
-              <i class="iconfont icon-qq" />
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
@@ -78,7 +62,7 @@ export default {
   data() {
     return {
       user: {
-        mobile: "",
+        phone: "",
         password: "",
       },
       loginInfo: {},
@@ -92,9 +76,8 @@ export default {
         if(data.code==-1){
           this.$message.error(data.message);
         }else{
-          cookie.set('token', data.data.token, {domain: 'localhost'})
-          cookie.set('nickname', data.data.nickname, {domain: 'localhost'})
-          cookie.set('avatar', data.data.avatar, {domain: 'localhost'})
+          cookie.set('token', data.data.token)
+          cookie.set('name', data.data.user.name)
           this.$router.push({path: '/'})
           this.$message.success(data.message);
         }

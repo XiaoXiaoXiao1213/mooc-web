@@ -21,8 +21,6 @@ Vue.use(ElementUI, {
   size: 'small'
 });
 Vue.prototype.$axios = axios;
-Vue.prototype.$api = api;
-
 const i18n = new VueI18n({
   locale: 'zh',
   messages

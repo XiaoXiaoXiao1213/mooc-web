@@ -4,7 +4,7 @@
     <div class="collapse-btn" @click="collapseChage">
       <i class="el-icon-menu"></i>
     </div>
-    <div class="logo">英语在线教育系统管理后台</div>
+    <div class="logo">Mooc系统管理后台</div>
 
     <div class="header-right">
       <div class="header-user-con">
@@ -16,24 +16,15 @@
         </div>
         <!-- 用户头像 -->
         <div class="user-avator">
-          <img src="../../assets/img/people.png" />
+          <img src="../../assets/img/people.png"/>
         </div>
-
         <!-- 用户名下拉菜单 -->
         <el-dropdown class="user-name" trigger="click" @command="handleCommand">
           <span class="el-dropdown-link">
-            {{username}}
+            {{ username}}
             <i class="el-icon-caret-bottom"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <!-- <a href="http://blog.gdfengshuo.com/about/" target="_blank">
-                            <el-dropdown-item>关于作者</el-dropdown-item>
-                        </a>
-                        <a href="https://github.com/lin-xin/vue-manage-system" target="_blank">
-                            <el-dropdown-item>项目仓库</el-dropdown-item>
-            </a> -->
-            <el-dropdown-item divided command="personal_center">个人中心</el-dropdown-item>
-            <el-dropdown-item divided command="reset_pass">修改密码</el-dropdown-item>
             <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -43,7 +34,9 @@
 </template>
 <script>
 import bus from "../common/bus";
-import { User } from "../common/entity";
+import {User} from "../common/entity";
+import cookie from 'js-cookie'
+
 export default {
   data() {
     return {
@@ -59,13 +52,18 @@ export default {
   },
   computed: {
     username() {
-      return User.info.username;
+    console.log("ddd,",cookie.get("name"))
+
+      return cookie.get("name");
     }
   },
   methods: {
     // 用户名下拉菜单选择事件
     handleCommand(command) {
       if (command == "loginout") {
+        cookie.set("token", "")
+        cookie.set('name', "")
+        cookie.set('avatar', "")
         this.$router.push("/login");
       }
     },
@@ -118,47 +116,57 @@ export default {
   font-size: 22px;
   color: #fff;
 }
+
 .collapse-btn {
   float: left;
   padding: 0 21px;
   cursor: pointer;
   line-height: 70px;
 }
+
 .header .logo {
   float: left;
   width: 320px;
   line-height: 70px;
 }
+
 .header-right {
   float: right;
   padding-right: 50px;
 }
+
 .header-user-con {
   display: flex;
   height: 70px;
   align-items: center;
 }
+
 .btn-fullscreen {
   transform: rotate(45deg);
   margin-right: 5px;
   font-size: 24px;
 }
+
 .user-name {
   margin-left: 10px;
 }
+
 .user-avator {
   margin-left: 20px;
 }
+
 .user-avator img {
   display: block;
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 .el-dropdown-link {
   color: #fff;
   cursor: pointer;
 }
+
 .el-dropdown-menu__item {
   text-align: center;
 }

@@ -43,11 +43,6 @@ export default {
           icon: "el-icon-lx-global",
           index: "course",
           title: "课程管理"
-        },
-        {
-          icon: "el-icon-lx-global",
-          index: "user",
-          title: "用户管理"
         }
       ]
     };

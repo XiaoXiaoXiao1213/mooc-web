@@ -53,7 +53,7 @@ export default {
       this.editor.customConfig.pasteFilterStyle = false
       // this.editor.customConfig.uploadImgShowBase64 = true // base 64 存储图片
       // this.editor.customConfig.uploadImgServer = 'https://wx.couplefish.com/bswapi/updateImages'// 配置服务器端地址
-      this.editor.customConfig.uploadImgServer = 'http://localhost:8013/api/updateImages'// 配置服务器端地址
+      this.editor.customConfig.uploadImgServer = 'http://localhost:18080/api/updateImages'// 配置服务器端地址
       this.editor.customConfig.uploadImgHeaders = {      }// 自定义 header
       this.editor.customConfig.uploadFileName = 'files' // 后端接受上传文件的参数名
       this.editor.customConfig.uploadImgMaxSize = 5 * 1024 * 1024 // 将图片大小限制为 2M

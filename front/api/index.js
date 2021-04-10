@@ -1,12 +1,22 @@
-import request from '@/utils/request'
+import request from '../utils/request'
 
 export default {
   // 获取8门推荐课程
-  getSuggest(req) {
+  // 获取8门推荐课程
+  getSuggest(token) {
     return request({
-      url: `getSuggestCourse`,
-      method: 'post',
-      data: req
+      url: `/user/commend/video`,
+      method: 'get',
+      headers: {
+        "Authorization": token
+      }
+    })
+  },
+  getSuggestNotLogin() {
+    return request({
+      url: `/user/commend/video/default`,
+      method: 'get'
     })
   }
+
 }

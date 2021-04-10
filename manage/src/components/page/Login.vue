@@ -1,19 +1,19 @@
 <template>
   <div class="login-wrap">
     <div class="ms-login">
-      <div class="ms-title">黑天鹅系统管理后台登陆</div>
+      <div class="ms-title">Mooc系统管理后台登陆</div>
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="ms-content">
-        <el-form-item prop="username">
-          <el-input v-model="ruleForm.username" placeholder="请输入用户名">
+        <el-form-item prop="phone">
+          <el-input v-model="ruleForm.phone" placeholder="请输入手机号">
             <el-button slot="prepend" icon="el-icon-lx-people"></el-button>
           </el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input
-            type="password"
-            placeholder="请输入密码"
-            v-model="ruleForm.password"
-            @keyup.enter.native="submitForm('ruleForm')"
+              type="password"
+              placeholder="请输入密码"
+              v-model="ruleForm.password"
+              @keyup.enter.native="submitForm('ruleForm')"
           >
             <el-button slot="prepend" icon="el-icon-lx-lock"></el-button>
           </el-input>
@@ -21,27 +21,30 @@
         <div class="login-btn">
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </div>
-        <p class="login-tips">Tips : 用户名和密码不能为空。</p>
+        <p class="login-tips">Tips : 手机号和密码不能为空。</p>
       </el-form>
     </div>
   </div>
 </template>
 
 <script>
-import { alertMessage } from "../common/utils";
-import { User } from "../common/entity";
+import {alertMessage} from "../common/utils";
+import {User} from "../common/entity";
+import LogApi from "../../../api/login"
+import cookie from 'js-cookie'
+
 export default {
-  data: function() {
+  data: function () {
     return {
       ruleForm: {
-        username: "admin",
+        phone: "",
         password: ""
       },
       rules: {
-        username: [
-          { required: true, message: "请输入用户名", trigger: "blur" }
+        phone: [
+          {required: true, message: "请输入手机号", trigger: "blur"}
         ],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }]
+        password: [{required: true, message: "请输入密码", trigger: "blur"}]
       }
     };
   },
@@ -50,16 +53,19 @@ export default {
       this.$refs[formName].validate(async valid => {
         if (valid) {
           try {
-            let { data, message } = await this.$api.login(
-              this.ruleForm
+            let {data} = await LogApi.login(
+                this.ruleForm
             );
-            if (message == "登陆成功") {
-              alertMessage(message, "success");
-              User.info = data.username;
-              User.token = data.token;
-              this.$router.push(this.$route.query.redirect || "/onlineRegistration");
+            console.log(data)
+
+            if (data.code == 200) {
+              alertMessage(data.message, "success");
+              cookie.set('token', data.data.token)
+              cookie.set('name', data.data.user.name)
+              cookie.set('avatar', data.data.user.image)
+              this.$router.push({path: '/course'})
             } else {
-              alertMessage(message, "error");
+              alertMessage(data.message, "error");
             }
           } catch (error) {
             console.log(error);
@@ -82,6 +88,7 @@ export default {
   background-image: url(../../assets/img/login-bg.jpg);
   background-size: 100%;
 }
+
 .ms-title {
   width: 100%;
   line-height: 50px;
@@ -90,6 +97,7 @@ export default {
   color: #fff;
   border-bottom: 1px solid #ddd;
 }
+
 .ms-login {
   position: absolute;
   left: 50%;
@@ -100,17 +108,21 @@ export default {
   background: rgba(255, 255, 255, 0.3);
   overflow: hidden;
 }
+
 .ms-content {
   padding: 30px 30px;
 }
+
 .login-btn {
   text-align: center;
 }
+
 .login-btn button {
   width: 100%;
   height: 36px;
   margin-bottom: 10px;
 }
+
 .login-tips {
   font-size: 12px;
   line-height: 30px;

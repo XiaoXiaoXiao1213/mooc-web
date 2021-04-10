@@ -21,26 +21,10 @@ export default new Router({
           meta: { title: '课程管理' }
         },
         {
-          path: '/user',
-          component: resolve => require(['../components/page/user/user.vue'], resolve),
-          meta: { title: '用户管理' }
-        },
-        {
-          path: '/loginSet',
-          component: resolve => require(['../components/page/LoginSet.vue'], resolve),
-          meta: { title: '登录设置' }
-        },
-        {
           // 权限页面
           path: '/permission',
           component: resolve => require(['../components/page/Permission.vue'], resolve),
           meta: { title: '权限测试', permission: true }
-        },
-        {
-          // 权限页面
-          path: '/icon',
-          component: resolve => require(['../components/page/Icon.vue'], resolve),
-          meta: { title: '图标' }
         },
         {
           path: '/404',
