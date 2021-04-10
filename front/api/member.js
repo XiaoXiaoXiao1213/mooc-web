@@ -18,7 +18,11 @@ export default {
       method: 'post',
       data: JSON.stringify(data),
       headers: {
-        "Authorization":token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   },
@@ -28,7 +32,11 @@ export default {
       method: 'post',
       data: data,
       headers: {
-        "Authorization":token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   },

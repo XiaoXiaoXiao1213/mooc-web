@@ -9,14 +9,24 @@ export default {
       url: STATIC_URL+`/user/commend/video`,
       method: 'get',
       headers: {
-        "Authorization": token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   },
   getSuggestNotLogin() {
     return request({
       url: STATIC_URL+`/user/commend/video/default`,
-      method: 'get'
+      method: 'get',
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
+      }
     })
   }
 

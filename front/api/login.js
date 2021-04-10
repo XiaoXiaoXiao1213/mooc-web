@@ -8,6 +8,12 @@ export default {
       url: STATIC_URL+`/user/login`,
       method: 'post',
       data: JSON.stringify(userInfo),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
+      }
     })
   },
   register(userInfo) {
@@ -15,7 +21,12 @@ export default {
       url: STATIC_URL+`/user/register`,
       method: 'post',
       data: JSON.stringify(userInfo),
-
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
+      }
     })
   },
   logout(token) {
@@ -23,7 +34,11 @@ export default {
       url: STATIC_URL+`/user/logout`,
       method: 'put',
       headers: {
-        "Authorization": token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   },

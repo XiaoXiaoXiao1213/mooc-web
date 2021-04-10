@@ -8,7 +8,11 @@ export default {
       url: STATIC_URL+`/user/history/video`,
       method: 'get',
       headers: {
-        "Authorization": token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   },
@@ -18,7 +22,11 @@ export default {
       url: STATIC_URL+`/video/click/${id}`,
       method: 'put',
       headers: {
-        "Authorization":token
+        "Authorization": token,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Headers":"Origin,X-Requested-With,Content-Type,Authorization",
+        "Access-Control-Allow-Credentials": 'true',
       }
     })
   }
