@@ -29,4 +29,4 @@ export const HTTP_REQUEST_METHOD = {
 
 export const TOKEN_KEY = "Authorization"
 
-export const STATIC_URL = "http://127.0.0.1:8088/"
+export const STATIC_URL = "http://121.4.123.223:8088/"
