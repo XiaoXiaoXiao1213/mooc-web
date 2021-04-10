@@ -1,31 +1,30 @@
 import request from '../utils/request'
-export const STATIC_URL = ""
 
 export default {
   // 通过课程id 获取课程信息
   getCourse(id) {
     return request({
-      url: STATIC_URL+`/getCourse?id=${id}`,
+      url: `/getCourse?id=${id}`,
       method: 'get'
     })
   },
   getCourseByType(req,type) {
     return request({
-      url: STATIC_URL+`/video/type/${type}`,
+      url: `/video/type/${type}`,
       method: 'get',
       params:req
     })
   },
   getHotCourseByType(req) {
     return request({
-      url: STATIC_URL+`/video/hot`,
+      url: `/video/hot`,
       method: 'get',
       params:req
     })
   },
   getCourseAll(req) {
     return request({
-      url: STATIC_URL+`/video/all`,
+      url: `/video/all`,
       method: 'get',
       params: req
     })

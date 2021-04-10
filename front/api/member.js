@@ -1,11 +1,10 @@
 import request from '../utils/request'
-export const STATIC_URL = ""
 
 export default {
   // 通过用户id 获取用户信息
   getMember(token) {
     return request({
-      url: STATIC_URL+`/user/message`,
+      url: `/user/message`,
       method: 'get',
       headers: {
         "Authorization":token
@@ -14,7 +13,7 @@ export default {
   },
   editMember(data, token) {
     return request({
-      url: STATIC_URL+`/user/message/edit`,
+      url: `/user/message/edit`,
       method: 'post',
       data: JSON.stringify(data),
       headers: {
@@ -24,7 +23,7 @@ export default {
   },
   editPassword(data, token) {
     return request({
-      url: STATIC_URL+`/user/password/reset`,
+      url: `/user/password/reset`,
       method: 'post',
       data: data,
       headers: {
