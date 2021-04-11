@@ -5,20 +5,8 @@ import $ from 'jquery'
 import {
   LOCATION_USER_KEY,
   LOCATION_TOKEN_KEY,
-  LOCATION_PASSWORD_KEY,
-  CURRENTLY_SELECTED_MENU_KEY,
-  CURRENTLY_ROUTER_PATHS_KEY,
-  SERVICE_HOST_ADDR
 } from "./constants"
-import {
-  Crypto,
-  Random,
-  array2Descendants,
-  findParents,
-  findChildrens,
-  isBlank
-} from "./utils"
-import api from "./sereviceapi"
+
 
 export const CentralInterface = new Vue();
 
@@ -286,16 +274,6 @@ export const ExcelSheets = class ExcelSheets {
   }
 
 }
-
-// 1 使用学生端机器的 硬盘序列号和MAC地址 加密生成密文
-// 2 使用此密文作为软件的授权序列号 和内定的授权码 调用授权接口进行服务器授权
-
-// 3 再将此密文加密保存至软件本地
-// 4 每次软件启动时 使用步骤1 的密文 对比 已保存的密文 如果不匹配则代表软件运行在未经允许的机器上
-// 5 每个接口的调用都要上传此 密文 进行服务端验证 代表这个请求真实来自已授权的机器
-
-
-
 
 window.User = User
 window.SystemParameter = SystemParameter

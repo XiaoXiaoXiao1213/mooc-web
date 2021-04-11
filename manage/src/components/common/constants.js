@@ -11,7 +11,6 @@ export const CURRENTLY_SELECTED_MENU_KEY = "CURRENTLY_SELECTED_MENU_KEY";
 /**当前点击过的历史路由列表 */
 export const CURRENTLY_ROUTER_PATHS_KEY = "CURRENTLY_ROUTER_PATHS_KEY";
 /**URL 头 */
-// export const HOME_URL = `http://${location.host}/weihan/`;
 /**登录路径 */
 export const LOGIN_URL = `/login`
   /**HTTP 请求方法 */
