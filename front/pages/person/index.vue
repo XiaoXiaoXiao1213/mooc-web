@@ -44,7 +44,6 @@ export default {
     async getData() {
       let token = cookie.get('token')
       await member.getMember(token).then(response => {
-        console.log("大大",response.data.data)
         let member = response.data.data.user;
         this.item = member
       })

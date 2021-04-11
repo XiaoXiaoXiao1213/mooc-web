@@ -34,7 +34,7 @@
         <section class="container">
           <header class="comm-title">
             <h2 class="tac">
-              <a class="c-333" @click="change">热门课程</a>
+              <a class="c-333 hotCourse" @click="change">热门课程</a>
             </h2>
           </header>
           <div>
@@ -204,5 +204,9 @@ export default {
   left: 100px;
   font-size: 24px;
   color: white;
+}
+.hotCourse {
+  text-decoration: none;
+  font-size: 29px;
 }
 </style>

@@ -91,7 +91,6 @@
         <!-- 公共分页 开始 -->
         <div>
           <div class="paging">
-            <!-- undisable这个class是否存在，取决于数据属性hasPrevious -->
             <a
               :class="{undisable: !data.hasPrevious}"
               href="#"

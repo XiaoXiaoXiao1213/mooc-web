@@ -50,11 +50,8 @@ export default {
 
     async handleClickCourse(courseId) {
       let token = cookie.get('token')
-      console.log("token", token)
-      console.log(courseId)
       await history.addHistory(courseId, token).then(response => {
         window.open("http://baidu.com", "_blank");
-        // this.$router.push('/course/' + courseId)
       })
     },
   }

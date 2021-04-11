@@ -129,7 +129,7 @@ export default {
     handleChangePassword() {
       let token = cookie.get('token')
       member.editPassword(this.form, token).then(response => {
-        console.log("x",response.data)
+        console.log("x", response.data)
         let data = response.data
         if (data.code !== 200) {
           this.$message.error(data.message);

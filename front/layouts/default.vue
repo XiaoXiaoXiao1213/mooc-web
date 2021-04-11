@@ -16,7 +16,6 @@
             </router-link>
           </ul>
 
-          <!-- / nav 登录|注册 用户信息-->
           <ul class="h-r-login">
             <li v-if="!token" id="no-login">
               <a href="/login" title="登录">
@@ -96,7 +95,6 @@ export default {
   methods: {
     // 用户信息回显
     showInfo() {
-      //debugger
       let token = cookie.get("token");
       let name = cookie.get("name")
       let avatar = cookie.get('avatar')
