@@ -16,7 +16,6 @@
           ref="multipleTable"
           @selection-change="handleSelectionChange"
       >
-        <el-table-column type="index" align="center" label="序号" width="55"></el-table-column>
         <el-table-column prop="name" align="center" label="课程标题"></el-table-column>
         <el-table-column align="center" label="课程封面">
           <template slot-scope="scope">
@@ -24,7 +23,6 @@
           </template>
         </el-table-column>
         <el-table-column prop="video_url" align="center" label="课程地址"></el-table-column>
-        <el-table-column prop="content" align="center" label="课程简介"></el-table-column>
         <el-table-column prop="video_type" align="center" label="标签"></el-table-column>
         <el-table-column label="操作" width="180" align="center" v-if="!is_search">
           <template slot-scope="scope">
@@ -98,9 +96,6 @@
           <div class="edit-info-div">
           </div>
           <div class="edit-info-div">
-            <el-form-item label="课程简介">
-              <editor-bar v-model="form.content" v-if="editVisible"></editor-bar>
-            </el-form-item>
           </div>
 
           <el-form-item>
@@ -204,9 +199,7 @@ export default {
     async saveEdit() {
       if (this.form.name === '') {
         this.$alert('请输入课程标题', '警告', {confirmButtonText: '确定'})
-      } else if (this.form.content === '') {
-        this.$alert('请输入描述', '警告', {confirmButtonText: '确定'})
-      } else if (this.form.video_type === '') {
+      }  else if (this.form.video_type === '') {
         this.$alert('请输入课程标签', '警告', {confirmButtonText: '确定'})
       } else if (this.form.video_img === '') {
         this.$alert('请载入一张课程封面图', '警告', {confirmButtonText: '确定'})
@@ -218,7 +211,6 @@ export default {
         fromdata.append("name", this.form.name)
         fromdata.append("video_url", this.form.video_url)
         fromdata.append("video_type", this.form.video_type)
-        fromdata.append("content", this.form.content || "")
         fromdata.append("video_img", this.form.video_img)
         await CourseApi.createCourse(fromdata)
         this.editVisible = false;
